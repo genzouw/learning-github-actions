@@ -1,0 +1,13 @@
+---
+name: "Say hello"
+description: "Say hello"
+author: "genzouw"
+inputs:
+  name:
+    description: "your name"
+runs:
+  using: "docker"
+  image: "docker://bash"
+  args:
+    - -c
+    - "echo Hello ${{ inputs.name }}"
