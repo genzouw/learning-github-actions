@@ -1,0 +1,14 @@
+---
+name: use-environment-variables
+run-name: use-environment-variables
+on:
+  - push
+jobs:
+  use-environment-variables:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - run: node .github/scripts/use_environment_variables.js
+        env:
+          POSTGRES_HOST: postgres_host
+          POSTGRES_PORT: 5432
