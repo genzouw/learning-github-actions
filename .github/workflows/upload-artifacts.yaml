@@ -1,0 +1,17 @@
+---
+name: upload-artifacts
+run-name: upload-artifacts
+on:
+  - push
+jobs:
+  upload-artifacts:
+    runs-on: ubuntu-22.04
+    steps:
+      - shell: bash
+        run: |
+          expr 2 + 1 > output.log
+      - name: Upload output file
+        uses: actions/upload-artifact@v3
+        with:
+          name: output-log-file
+          path: output.log
