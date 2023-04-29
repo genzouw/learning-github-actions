@@ -1,0 +1,13 @@
+---
+name: if-example
+run-name: if-example
+on:
+  - push
+jobs:
+  if-example:
+    runs-on: ubuntu-22.04
+    steps:
+      - run: echo "hello false"
+        if: ${{ false }}
+      - run: echo "hello true"
+        if: ${{ true }}
